@@ -1,0 +1,55 @@
+//============================================================================
+// Name        : pyramid.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : pyramid C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+#include<stdio.h>
+
+int main(void){
+    int i, j, k, n, empty_spaces, number_of_rows;
+    bool go = true;
+
+    while(go){
+    printf("How many rows of ##### do you want?\n");
+    //number_of_rows = GetInt();
+    number_of_rows = 8;
+
+    if(number_of_rows <= 0 || number_of_rows >23){
+        printf("Wrong number of rows\n");
+        go = true;
+        }
+
+        if(number_of_rows > 0 && number_of_rows <= 23){
+            go = false;
+            }
+    }
+
+    empty_spaces = number_of_rows;
+    printf("Height: %i\n", number_of_rows);
+
+    // for each rows
+    for ( i = 2 ; i <= number_of_rows+1 ; i++ ) {
+
+        // fill empty spaces,
+        for ( j = 1 ; j < empty_spaces ; j++ )
+            printf(" ");
+
+        // decrease empty spaces
+        empty_spaces--;
+
+        // fill #####
+        for( j = 1 ; j <= i ; j++ )
+            printf("#");
+
+        // new row after outer-loop
+        printf("\n");
+    }
+    return 0;
+}
+
