@@ -59,3 +59,56 @@ POTATIS
 Adam1
 David1
 Julia1
+
+/*JAVA KOD*/
+
+package pyramid;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class pyramid {
+
+    public static void main(String[] args) throws IOException {
+        
+        int i, j, k, n, empty_spaces = 0, number_of_rows = 0;
+        boolean go = true;
+        
+        while(go){
+            System.out.println("Hur stor ska pyramiden vara? (rader)");
+            
+            Scanner sc = new Scanner(System.in);
+            number_of_rows = sc.nextInt();
+            
+            if(number_of_rows <= 0 || number_of_rows >23){
+                System.out.println("Wrong number of rows\n");
+                go = true;
+            }
+
+            if(number_of_rows > 0 && number_of_rows <= 23){
+                go = false;
+            }
+        }
+        
+        empty_spaces = number_of_rows;
+        
+        System.out.print("Höjden är: ");
+        System.out.println(number_of_rows);
+        
+        for(i = 1; i <= number_of_rows; i++){
+            
+            //Fill empty spaces
+            for(j = 1; j < empty_spaces; j++){
+                System.out.print(" ");   
+            }
+            
+            empty_spaces--;
+            
+            //Fyll i med ****
+            for(j = 1; j <= i; j++){
+                System.out.print("#");
+            }
+            
+            System.out.println("");
+        }
+    }
+}
